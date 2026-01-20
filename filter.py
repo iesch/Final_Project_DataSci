@@ -22,7 +22,8 @@ for person in data:
                 try:
                     year = int(info['ontology/deathDate'].split('-')[0])
                 except ValueError:
-                    print(info['ontology/deathDate'].split('-')[0])
+                    year = 0
+                    pass
                 if year >= 2000:
                     deathplace.append(info['ontology/deathPlace_label'])
 
