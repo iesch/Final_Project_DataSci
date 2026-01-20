@@ -1,9 +1,15 @@
 import json
 from collections import Counter
+import string
+alphabet = list(string.ascii_uppercase)
 
+data = []
 # load the data
-with open('People/A_people.json') as file:
-    data = json.load(file)
+for letter in alphabet :
+    with open(f'People/{letter}_people.json') as file:
+        data.append(json.load(file))
+
+print(len(data))
 
 # initialize variables
 deathplace = []
