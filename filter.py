@@ -1,4 +1,5 @@
 import json
+from collections import Counter
 
 # load the data
 with open('People/A_people.json') as file:
@@ -7,7 +8,7 @@ with open('People/A_people.json') as file:
 # initialize variables
 deathplace = []
 deathcount = {}
-final_deathcount = {}
+final_deathcount = Counter()
 
 # filter for only entries that include death place
 for dict in data: 
