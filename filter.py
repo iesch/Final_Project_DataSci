@@ -23,7 +23,6 @@ for person in data:
                     year = int(info['ontology/deathDate'].split('-')[0])
                 except ValueError:
                     year = 0
-                    pass
                 if year >= 2000:
                     deathplace.append(info['ontology/deathPlace_label'])
 
