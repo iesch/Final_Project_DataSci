@@ -20,9 +20,10 @@ with open('Data/country_capital.csv') as file:
 country_capital = {}
 rows = table.split('\n')
 for row in rows:
-    country = row.split(';')[0].title()
-    capital = row.split(';')[1].title()
-    country_capital[capital] = country
+    if len(row.split(';')) == 2:
+        country = row.split(';')[0]
+        capital = row.split(';')[1]
+        country_capital[capital] = country
 
 # load states from US
 with open('Data/state_names.txt') as file:
@@ -74,7 +75,6 @@ for century in centuries:
         # if it's a list i.e. ['Paris', 'France']
         if isinstance(places, list): 
             for place in places:
-                place = place.title()
                 
                 if place == 'England' or place == 'Wales' or place == 'Scotland':
                     place = 'UK'
@@ -118,6 +118,7 @@ for century in centuries:
 # -----------------------------
 # SAVING RESULTS IN .CSV FORMAT
 # -----------------------------
+
 with open('Results/deathcount.csv', 'w', encoding='utf-8') as file:
     file.write('region, century, deathcount\n')
 with open('Results/deathcount.csv', 'a', encoding='utf-8') as file:
