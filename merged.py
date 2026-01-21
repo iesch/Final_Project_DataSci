@@ -2,7 +2,11 @@ import json
 from collections import Counter
 import string
 
-# load the data
+# --------------
+# PREPARING DATA
+# --------------
+
+# load the wiki data
 data = []
 alphabet = list(string.ascii_uppercase)
 for letter in alphabet :
@@ -35,6 +39,10 @@ deathplace = {'19': [], '21': []}
 deathcount = {'19': {}, '21': {}}
 final_deathcount = {'19': Counter(), '21': Counter()}
 
+# ------------------
+# FILTERING FOR TIME
+# ------------------
+
 # filter for only entries that include death place
 for person in data:
     for info in person:
@@ -48,7 +56,9 @@ for person in data:
                     total_wikicount['21'] += 1
                 if year >= 1800 and year < 1900:
                     total_wikicount['19'] += 1
-        #If the observation has a death date, we do not need to check for a birth date, we do not want to count the same article twice.
+        
+        # If the observation has a death date, we do not need to check for a birth date,
+        # we do not want to count the same article twice.
         elif 'ontology/birthData' in info:
             if not isinstance(info['ontology/birthDate'], list):
                 try:
@@ -71,6 +81,10 @@ for person in data:
                 if year >= 2000:
                     deathplace['21'].append(info['ontology/deathPlace_label'])
 
+# -----------------------------
+# FILTERING FOR LOCATION & TIME
+# -----------------------------
+
 # counting number of deaths in each place
 for century in deathplace:
     for places in deathplace[century]:
@@ -80,14 +94,15 @@ for century in deathplace:
                 place = place.lower()
                 
                 if place == 'england' or place == 'wales' or place == 'scotland':
-                    place = 'United Kingdom'
+                    place = 'united kingdom'
                 # any state from the US is just counted as US
                 if place in states:
                     place = 'united states'
 
                 # Only count countries 
                 if place in country_capital.values():
-
+                    
+                    # counter 
                     if place in deathcount[century]:
                         deathcount[century][place] += 1
                         # filter for values above 10
@@ -95,12 +110,13 @@ for century in deathplace:
                             final_deathcount[century][place] = deathcount[century][place]
                     else:
                         deathcount[century][place] = 1
+        
         # if it's a string i.e. 'Dublin'
         else:                       
             places = places.lower()
 
             if places == 'england' or places == 'wales' or places == 'scotland':
-                places = 'United Kingdom'
+                places = 'united kingdom'
 
             if places in states:
                 places = 'united states'
@@ -111,7 +127,8 @@ for century in deathplace:
 
             # if it's a country leave it as is
             if places in country_capital.values():
-
+                
+                # counter
                 if places in deathcount[century]:   
                     deathcount[century][places] += 1
                     # filter for values above 10
