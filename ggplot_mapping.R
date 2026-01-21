@@ -18,7 +18,15 @@ ggplot() +
   scale_y_continuous(labels = NULL) +
   labs(x = NULL, y = NULL)
  
-#data_19 <- read_csv
-#data_20 <- read_csv
+data_19 <- read_csv('Results/deathcount_19.csv')
+data_20 <- read_csv('Results/deathcount_21.csv')
+
+data_mapping <- left_join(data_19, coordinates, by = 'region')
+ggplot(data = data_mapping, aes(x='long', y ='lat', fill = 'region'))+
+  geom_polygon(aes(fill= 'deathcount'))+
+  labs(fill= 'deathcount') +
+  scale_fill_discrete()
+
+
 
       
