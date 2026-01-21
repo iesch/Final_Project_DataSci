@@ -114,22 +114,27 @@ for century in centuries:
                 else:
                     deathcount[century][places] = 1
 
-        # -----------------------------
-        # SAVING RESULTS IN .CSV FORMAT
-        # -----------------------------
 
+# -----------------------------
+# SAVING RESULTS IN .CSV FORMAT
+# -----------------------------
+with open('Results/deathcount.csv', 'w', encoding='utf-8') as file:
+    file.write('region, century, deathcount\n')
+with open('Results/deathcount.csv', 'a', encoding='utf-8') as file:
+    for century in centuries:
+        # turning final_deathcount and perc_deathcount into a csv 
+        for key, value in deathcount[century].items():
+            file.write(f'{key}, {century}, {value},\n')
+
+
+with open('Results/percentage_deathcount.csv', 'w', encoding='utf-8') as file:
+    file.write('region, century, Percentage_Deathcount\n')
+for century in centuries:
     # computing percentages
     total = sum((deathcount[century].values()))
     for country in deathcount[century]:
         perc_deathcount[century][country] = round((deathcount[century][country] / total) * 100, 2)
 
-    # turning final_deathcount and perc_deathcount into a csv 
-    with open(f'Results/deathcount_{century}.csv', 'w', encoding='utf-8') as file:
-        file.write('region, deathcount\n')
-        for key, value in deathcount[century].items():
-            file.write(f'{key}, {value}\n')
-    
-    with open(f'Results/percentage_deathcount_{century}.csv', 'w', encoding='utf-8') as file:
-        file.write('region, Percentage_Deathcount\n')
+    with open('Results/percentage_deathcount.csv', 'a', encoding='utf-8') as file:
         for key, value in perc_deathcount[century].items():
-            file.write(f'{key}, {value}\n')
+            file.write(f'{key}, {century}, {value}\n')
