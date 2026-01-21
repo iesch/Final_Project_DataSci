@@ -1,139 +1,139 @@
-Country, Percentage_Deathcount
-malta, 0.31
-turkey, 0.1
-united kingdom, 17.73
-iran, 0.06
-italy, 2.85
-united states, 13.25
-france, 13.76
-china, 0.5
-russia, 1.4
-greece, 0.35
-finland, 0.33
-sweden, 1.63
-denmark, 2.17
-latvia, 0.16
-norway, 1.05
-austria, 3.97
-australia, 3.58
-vietnam, 0.31
-uganda, 0.14
-bermuda, 0.12
-netherlands, 1.69
-belgium, 2.44
-madagascar, 0.08
-chile, 1.28
-philippines, 0.25
-bulgaria, 0.23
-canada, 1.71
-myanmar, 0.14
-germany, 4.19
-hungary, 0.35
-spain, 2.25
-slovakia, 0.17
-romania, 0.54
-poland, 0.91
-falkland islands, 0.04
-peru, 0.74
-mexico, 1.36
-ecuador, 0.27
-pakistan, 0.1
-brazil, 0.74
-argentina, 1.26
-scotland, 1.22
-ireland, 1.22
-estonia, 0.17
-haiti, 0.29
-new zealand, 1.01
-liberia, 0.19
-switzerland, 1.26
-zimbabwe, 0.02
-czech republic, 0.45
-thailand, 0.66
-montserrat, 0.17
-colombia, 0.33
-portugal, 0.66
-guernsey, 0.08
-venezuela, 0.43
-sri lanka, 0.21
-saudi arabia, 0.02
-mauritania, 0.02
-kosovo, 0.04
-japan, 1.14
-cuba, 0.25
-bolivia, 0.23
-yemen, 0.04
-nepal, 0.08
-solomon islands, 0.04
-algeria, 0.1
-belarus, 0.02
-iceland, 0.04
-el salvador, 0.12
-costa rica, 0.14
-puerto rico, 0.06
-barbados, 0.08
-fiji, 0.06
-gibraltar, 0.08
-isle of man, 0.06
-india, 0.62
-malaysia, 0.08
-wales, 0.02
-south korea, 0.08
-indonesia, 0.04
-paraguay, 0.1
-dominican republic, 0.12
-lebanon, 0.14
-luxembourg, 0.12
-greenland, 0.04
-angola, 0.04
-south africa, 0.29
-mauritius, 0.1
-egypt, 0.31
-slovenia, 0.14
-libya, 0.04
-nicaragua, 0.02
-uruguay, 0.29
-liechtenstein, 0.02
-lithuania, 0.19
-french guiana, 0.02
-singapore, 0.04
-croatia, 0.17
-norfolk island, 0.02
-georgia, 0.04
-nigeria, 0.04
-papua new guinea, 0.02
-palestine, 0.02
-morocco, 0.04
-tunisia, 0.04
-laos, 0.02
-jersey, 0.08
-united kingdom northern ireland, 0.08
-ukraine, 0.06
-pitcairn islands, 0.02
-sierra leone, 0.1
-vanuatu, 0.02
-sudan, 0.04
-monaco, 0.08
-iraq, 0.02
-honduras, 0.06
-guatemala, 0.21
-syria, 0.04
-panama, 0.02
-serbia, 0.1
-namibia, 0.02
-bangladesh, 0.04
-senegal, 0.02
-samoa, 0.02
-niger, 0.02
-saint helena, 0.02
-kyrgyzstan, 0.02
-brunei, 0.02
-azerbaijan, 0.04
-afghanistan, 0.02
-seychelles, 0.02
-french polynesia, 0.06
-ethiopia, 0.04
-oman, 0.02
-montenegro, 0.02
-cook islands, 0.02
-suriname, 0.02
+region, Percentage_Deathcount
+Malta, 0.35
+Turkey, 0.11
+United Kingdom, 5.26
+Iran, 0.07
+Italy, 3.21
+United States, 14.94
+France, 15.51
+China, 0.57
+Russia, 1.57
+Greece, 0.39
+Finland, 0.37
+Sweden, 1.83
+Denmark, 2.45
+Latvia, 0.17
+Norway, 1.18
+Austria, 4.48
+Australia, 4.04
+Scotland, 2.77
+Vietnam, 0.35
+Uganda, 0.15
+Bermuda, 0.13
+Wales, 0.55
+Netherlands, 1.9
+Belgium, 2.75
+Madagascar, 0.09
+Chile, 1.44
+Philippines, 0.28
+Bulgaria, 0.26
+Canada, 1.92
+Myanmar, 0.15
+Germany, 4.72
+Hungary, 0.39
+Spain, 2.53
+Slovakia, 0.2
+Romania, 0.61
+Poland, 1.03
+Falkland Islands, 0.04
+Peru, 0.83
+Mexico, 1.53
+Ecuador, 0.31
+Pakistan, 0.11
+Brazil, 0.83
+Argentina, 1.42
+Ireland, 1.38
+Estonia, 0.2
+Haiti, 0.33
+New Zealand, 1.14
+Liberia, 0.22
+Switzerland, 1.42
+Zimbabwe, 0.02
+Czech Republic, 0.5
+Thailand, 0.74
+Montserrat, 0.2
+Colombia, 0.39
+Portugal, 0.74
+Guernsey, 0.09
+Venezuela, 0.48
+Sri Lanka, 0.24
+Saudi Arabia, 0.02
+Mauritania, 0.02
+Kosovo, 0.04
+Japan, 1.29
+Cuba, 0.28
+Bolivia, 0.26
+Yemen, 0.04
+Nepal, 0.09
+Solomon Islands, 0.04
+Algeria, 0.11
+Belarus, 0.02
+Iceland, 0.04
+El Salvador, 0.13
+Costa Rica, 0.15
+Puerto Rico, 0.07
+Barbados, 0.09
+Fiji, 0.07
+Gibraltar, 0.09
+Isle Of Man, 0.07
+India, 0.7
+Malaysia, 0.09
+South Korea, 0.09
+Paraguay, 0.15
+Indonesia, 0.04
+Dominican Republic, 0.13
+Lebanon, 0.15
+Luxembourg, 0.13
+Greenland, 0.04
+Angola, 0.04
+South Africa, 0.33
+Mauritius, 0.11
+Egypt, 0.35
+Slovenia, 0.15
+Libya, 0.04
+Nicaragua, 0.02
+Uruguay, 0.33
+Liechtenstein, 0.02
+Lithuania, 0.22
+French Guiana, 0.02
+Singapore, 0.04
+Croatia, 0.2
+Norfolk Island, 0.02
+Georgia, 0.04
+Nigeria, 0.04
+Papua New Guinea, 0.02
+Palestine, 0.02
+Morocco, 0.04
+Tunisia, 0.04
+Laos, 0.02
+Jersey, 0.09
+United Kingdom Northern Ireland, 0.09
+Ukraine, 0.07
+Pitcairn Islands, 0.02
+Sierra Leone, 0.11
+Vanuatu, 0.02
+Sudan, 0.04
+Monaco, 0.09
+Iraq, 0.02
+Honduras, 0.07
+Guatemala, 0.24
+Syria, 0.04
+Panama, 0.02
+Serbia, 0.11
+Namibia, 0.02
+Bangladesh, 0.04
+Senegal, 0.02
+Samoa, 0.02
+Niger, 0.02
+Saint Helena, 0.02
+Kyrgyzstan, 0.02
+Brunei, 0.02
+Azerbaijan, 0.04
+Afghanistan, 0.02
+Seychelles, 0.02
+French Polynesia, 0.07
+Ethiopia, 0.04
+Oman, 0.02
+Montenegro, 0.02
+Cook Islands, 0.02
+Suriname, 0.02

@@ -20,18 +20,18 @@ with open('Data/country_capital.csv') as file:
 country_capital = {}
 rows = table.split('\n')
 for row in rows:
-    country = row.split(';')[0].lower()
-    capital = row.split(';')[1].lower()
+    country = row.split(';')[0].title()
+    capital = row.split(';')[1].title()
     country_capital[capital] = country
 
 # load states from US
 with open('Data/state_names.txt') as file:
-    States = file.read()
+    states = file.read()
 # make into a set
-States = States.split(',\n')
+states = states.split(',\n')
 states = set()
-for state in states:
-    states.add(state.lower())
+for State in states:
+    states.add(State.title())
 
 # initialize variables
 perc_deathcount = {'19': Counter(), '21': Counter()}
@@ -91,7 +91,7 @@ for century in deathplace:
         # if it's a list i.e. ['Paris', 'France']
         if isinstance(places, list): 
             for place in places:
-                place = place.lower()
+                place = place.title()
                 
                 if place == 'england' or place == 'wales' or place == 'scotland':
                     place = 'united kingdom'
@@ -110,7 +110,7 @@ for century in deathplace:
         
         # if it's a string i.e. 'Dublin'
         else:                       
-            places = places.lower()
+            places = places.title()
 
             if places == 'england' or places == 'wales' or places == 'scotland':
                 places = 'united kingdom'
@@ -142,10 +142,11 @@ for century in deathplace:
 
     # turning final_deathcount and perc_deathcount into a csv 
     with open(f'Results/deathcount_{century}.csv', 'w', encoding='utf-8') as file:
-        file.write('Country, Deathcount\n')
+        file.write('region, deathcount\n')
         for key, value in deathcount[century].items():
             file.write(f'{key}, {value}\n')
+    
     with open(f'Results/percentage_deathcount_{century}.csv', 'w', encoding='utf-8') as file:
-        file.write('Country, Percentage_Deathcount\n')
+        file.write('region, Percentage_Deathcount\n')
         for key, value in perc_deathcount[century].items():
-            file.write(f'{key.title()}, {value}\n')
+            file.write(f'{key}, {value}\n')
