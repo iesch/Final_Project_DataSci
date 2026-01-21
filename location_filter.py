@@ -43,8 +43,8 @@ for places in deathplace:
         for place in places:
             place = place.lower()
             
-            if place == 'united kingdom':
-                place = 'england'
+            if place == 'england' or place == 'wales' or place == 'scotland':
+                place = 'United Kingdom'
 
             if place in states:
                 place = 'united states'
@@ -53,7 +53,6 @@ for places in deathplace:
             if place in country_capital.values():
 
                 # count how many times people died in that country
-                if place in country_capital:
                     if place in deathcount:
                         deathcount[place] += 1
                         # filter for values above 10
@@ -66,8 +65,8 @@ for places in deathplace:
     else:                       
         places = places.lower()
 
-        if places == 'united kingdom':
-            places = 'england'
+        if place == 'england' or place == 'wales' or place == 'scotland':
+            places = 'United Kingdom'
 
         if places in states:
             places = 'united states'

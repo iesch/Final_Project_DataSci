@@ -52,7 +52,7 @@ for person in data:
                     deathplace['21'].append(info['ontology/deathPlace_label'])
 
 # counting number of deaths in each place
-for century in ['19', '21']:
+for century in deathplace:
     for places in deathplace[century]:
         # if it's a list
         if isinstance(places, list): 
