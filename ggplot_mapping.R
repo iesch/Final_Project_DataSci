@@ -23,14 +23,14 @@ data_mapping <- data |>
     )
   )
 
-
 ggplot(data = data_mapping) +
   aes(x=long, y =lat, fill = deathcount, map_id = region) +
   geom_map(map = data_mapping) + 
   scale_x_continuous(labels = NULL) +
   scale_y_continuous(labels = NULL) +
   labs(x = NULL, y = NULL) +
-  scale_fill_viridis_c(name = 'Death Count', option = 'rocket', trans = "log10", na.value = 'black', guide = guide_colorbar(position = "bottom")) +
+  scale_fill_viridis_c(name = 'Death Count', option = 'rocket', trans = "log10", na.value = '#f0e4ccff', 
+    guide = guide_colorbar(position = "bottom"), direction = -1) +
   ggtitle('Amount of Deaths per Country', 'From the 19th until the 21st century')+
   theme(text = element_text(size = 10, family = 'serif'))+
   coord_fixed(1.3) +
