@@ -78,6 +78,7 @@ for century in centuries:
                 
                 if place == 'England' or place == 'Wales' or place == 'Scotland':
                     place = 'UK'
+
                 # any state from the US is just counted as US
                 if place in states or place == 'United States of America' or place == 'United States':
                     place = 'USA'
@@ -92,16 +93,17 @@ for century in centuries:
                         deathcount[century][place] = 1
         
         # if it's a string i.e. 'Dublin'
-        else:                       
+        else:                 
+
+            # if it's a capital make it the corresponding country
+            if places in country_capital:
+                places = country_capital[places] 
+
             if places == 'England' or places == 'Wales' or places == 'Scotland':
                 places = 'UK'
             # any state from the US is just counted as US
             if places in states or places == 'United States of America' or places == 'United States':
                 places = 'USA'
-            
-            # if it's a capital make it the corresponding country
-            if places in country_capital:
-                places = country_capital[places] 
 
             # if it's a country leave it as is
             if places in country_capital.values():
@@ -122,4 +124,10 @@ with open('Results/deathcount.csv', 'a', encoding='utf-8') as file:
     for century in centuries:
         # turning final_deathcount and perc_deathcount into a csv 
         for key, value in deathcount[century].items():
-            file.write(f'{key}, {century}, {value},\n')
+          file.write(f'{key}, {century}, {value}\n')
+
+with open('Results/totals.csv', 'w', encoding='utf-8') as file:
+    file.write('century, countries_recorded, total_deathcount\n')
+with open('Results/totals.csv', 'a', encoding='utf-8') as file:
+    for century in centuries:
+        file.write(f'{century}th, {len(deathcount[century])}, {sum(deathcount[century].values())}\n')
