@@ -3,7 +3,6 @@ library(tidyverse)
 library(maps)
 library(gganimate)
 
-
 coordinates <- map_data("world")
 
 data <- read_csv('Results/time_deathcount.csv') |>
@@ -19,14 +18,15 @@ data_mapping <- data |>
   )
 
 ggplot(data = data_mapping) +
-  aes(x=long, y=lat, fill = deathcount, map_id = region) +
-  geom_map(map = data_mapping) + 
+  aes(x=long, y=lat, color = deathcount) +
+  geom_point()+
+  # geom_map(map = data_mapping) + 
   scale_x_continuous(labels = NULL) +
   scale_y_continuous(labels = NULL) +
   labs(x = NULL, y = NULL) +
-  scale_fill_viridis_c(option = 'rocket', trans = 'log10', na.value = 'black') +
+  scale_color_viridis_c(option = 'rocket', trans = 'log10', na.value = 'black') +
   coord_fixed(1.3) +
-  facet_wrap('year', ncol = 2) +
   transition_time(year) +
   ease_aes('linear')
+
 
