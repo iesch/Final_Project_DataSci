@@ -8,7 +8,7 @@ library(tidytext)
 # ----------------
 
 #Load in data
-data <- read_csv('Results/deathcount.csv')
+data <- read_csv('Results/CSV/deathcount.csv')
 pivoted_df <- pivot_wider(data, names_from = century, values_from = deathcount)
 
 #Selecting for the top 5 deathcount countries per century
@@ -59,14 +59,14 @@ barplot_top5 <- ggplot(data = deathcount_df) +
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank())
 #Save result as pdf
-ggsave('top_5_century.pdf', plot = barplot_top5, width = 17, height = 10, units = 'cm')
+ggsave('Results/Figures/top_5_century.pdf', plot = barplot_top5, width = 17, height = 10, units = 'cm')
 
 # ----------------
 #  SECOND BARPLOT
 # ----------------
 
 #Overwrite data with new totals.csv
-data <- read_csv('Results/totals.csv')
+data <- read_csv('Results/CSV/totals.csv')
 refined_df <- select(data, -countries_recorded)
 
 #Plotting totals_century barplot
@@ -95,4 +95,4 @@ barplot_totals <- ggplot(data = refined_df) +
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank())
 #Save the result as a pdf 
-ggsave('Results/totals_century.pdf', plot = barplot_totals, width = 10, height = 12, units = 'cm')
+ggsave('Results/Figures/totals_century.pdf', plot = barplot_totals, width = 10, height = 12, units = 'cm')

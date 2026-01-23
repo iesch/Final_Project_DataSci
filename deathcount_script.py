@@ -120,16 +120,16 @@ for century in centuries:
 # SAVING RESULTS IN .CSV FORMAT
 # ------------------------------
 
-with open('Results/deathcount.csv', 'w', encoding='utf-8') as file:
+with open('Results/CSV/deathcount.csv', 'w', encoding='utf-8') as file:
     file.write('region, century, deathcount\n')
-with open('Results/deathcount.csv', 'a', encoding='utf-8') as file:
+with open('Results/CSV/deathcount.csv', 'a', encoding='utf-8') as file:
     for century in centuries:
         # turning final_deathcount and perc_deathcount into a csv 
         for key, value in deathcount[century].items():
           file.write(f'{key}, {century}, {value}\n')
 
-with open('Results/totals.csv', 'w', encoding='utf-8') as file:
+with open('Results/CSV/totals.csv', 'w', encoding='utf-8') as file:
     file.write('century, countries_recorded, total_deathcount\n')
-with open('Results/totals.csv', 'a', encoding='utf-8') as file:
+with open('Results/CSV/totals.csv', 'a', encoding='utf-8') as file:
     for century in centuries:
         file.write(f'{century}th, {len(deathcount[century])}, {sum(deathcount[century].values())}\n')

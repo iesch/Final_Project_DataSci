@@ -5,7 +5,7 @@ library(tidyverse)
 library(maps)
 
 coordinates <- map_data("world")
-data <- read_csv('Results/deathcount.csv')
+data <- read_csv('Results/CSV/deathcount.csv')
 
 # Filter and combine datasets 
 coordinates_expanded <- coordinates |>
@@ -42,4 +42,4 @@ ggplot(data = data_mapping) +
   #Adding all maps to the figure
   facet_wrap('century', ncol = 3)
 
-ggsave('map_plot.pdf', height = 8, width = 19, units = "cm")
+ggsave('Results/Figures/map_plot.pdf', height = 8, width = 19, units = "cm")
