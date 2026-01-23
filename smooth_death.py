@@ -8,7 +8,7 @@ import string
 
 # load the wiki data
 data = []
-alphabet = 'A' #list(string.ascii_uppercase)
+alphabet = list(string.ascii_uppercase)
 for letter in alphabet :
     with open(f'Data/People/{letter}_people.json') as file:
         data.append(json.load(file))
@@ -20,9 +20,10 @@ with open('Data/country_capital.csv') as file:
 country_capital = {}
 rows = table.split('\n')
 for row in rows:
-    country = row.split(';')[0].lower()
-    capital = row.split(';')[1].lower()
-    country_capital[capital] = country
+    if len(row.split(';')) == 2:
+        country = row.split(';')[0]
+        capital = row.split(';')[1]
+        country_capital[capital] = country
 
 # load states from US
 with open('Data/state_names.txt') as file:
@@ -72,13 +73,12 @@ for time in range(start, stop, step):
         # if it's a list i.e. ['Paris', 'France']
         if isinstance(places, list): 
             for place in places:
-                place = place.lower()
                 
-                if place == 'england' or place == 'wales' or place == 'scotland':
-                    place = 'united kingdom'
+                if place == 'England' or place == 'Wales' or place == 'Scotland':
+                    place = 'UK'
                 # any state from the US is just counted as US
-                if place in states:
-                    place = 'united states'
+                if place in states or place == 'United States of America' or place == 'United States':
+                    place = 'USA'
 
                 # Only count countries 
                 if place in country_capital.values():
@@ -91,13 +91,11 @@ for time in range(start, stop, step):
         
         # if it's a string i.e. 'Dublin'
         else:                       
-            places = places.lower()
-
-            if places == 'england' or places == 'wales' or places == 'scotland':
-                places = 'united kingdom'
+            if places == 'England' or places == 'Wales' or places == 'Scotland':
+                places = 'UK'
             # any state from the US is just counted as US
-            if places in states:
-                places = 'united states'
+            if places in states or places == 'United States of America' or places == 'United States':
+                places = 'USA'
             
             # if it's a capital make it the corresponding country
             if places in country_capital:
@@ -111,16 +109,6 @@ for time in range(start, stop, step):
                     deathcount[time][places] += 1          
                 else:
                     deathcount[time][places] = 1
-
-
-# # computing percentages
-# perc_deathcount = {'19': Counter(), '21': Counter()}
-
-# for century in deathcount:
-#     total = sum((deathcount[century].values()))
-#     for country in deathcount[century]:
-#         perc_deathcount[century][country] = round((deathcount[century][country] / total) * 100, 2)
-
 
 # turning final_deathcount into a csv
 with open('Results/time_deathcount.csv', 'w', encoding='utf-8') as file:
